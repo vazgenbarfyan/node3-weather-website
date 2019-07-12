@@ -5,6 +5,7 @@ const geocode = require('./utils/goecode')
 const forecast = require('./utils/forecast')
 
 const app = express(),
+port = process.env.PORT ||3000
 // Define pahs for Express config
 publicDirectoryPath=path.join(__dirname,'../public'),
 viewsPath = path.join(__dirname,'../templates/views'),
@@ -94,6 +95,6 @@ app.get('*',(req,res)=>{
     });
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000.')
+app.listen(port, ()=>{
+    console.log(`Server is up on port ${port}.`)
 });
